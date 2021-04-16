@@ -1,0 +1,88 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Impact, Helvetica, sans-serif, Bold;
+}
+ /* css colors */
+:root{
+    --hue-neutral: 100;
+    --hue-buttons: 200;
+    --hue-correct: 145;
+    --hue-wrong: 0;
+
+}
+/* background styles */
+body {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 20%, 50%);
+}
+/*  right or wrong colors for background */
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+} 
+/* buttons styles within container */
+.container {
+    width: 900px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.button {
+    --hue: var(--hue-buttons);
+    border: 1px solid, hsl(var(--hue), 100%, 70%);
+    background-color: hsl(var(--hue), 30%, 50%);
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: gainsboro;
+    outline: none;
+}
+
+.button-hover {
+    border-color: black;
+}
+
+.button-correct {
+    --hue: var(--hue-correct);
+    color: black
+}
+
+.button-wrong {
+    --hue: var(--hue-wrong);
+    color: black;
+}
+.start-button, .next-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding:20px 40px;
+}
+/* start and next styles */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* hides functions/questions for next questions etc. */
+.hide {
+    display: none;
+}
+
