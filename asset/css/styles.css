@@ -1,10 +1,10 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Impact, Helvetica, sans-serif, Bold;
+    font-family: Arial, Helvetica, sans-serif, Bold;
 }
  /* css colors */
 :root{
-    --hue-neutral: 100;
+    --hue-neutral: 290;
     --hue-buttons: 200;
     --hue-correct: 145;
     --hue-wrong: 0;
@@ -22,14 +22,6 @@ body {
     align-items: center;
     background-color: hsl(var(--hue), 20%, 50%);
 }
-/*  right or wrong colors for background */
-body.correct {
-    --hue: var(--hue-correct);
-}
-
-body.wrong {
-    --hue: var(--hue-wrong);
-} 
 /* buttons styles within container */
 .container {
     width: 900px;
@@ -85,4 +77,18 @@ body.wrong {
 .hide {
     display: none;
 }
-
+/* timer styles */
+#my-timer {
+    padding: 10px;
+    margin: 10px;
+    font-style: italic;
+    font-size: large;
+    display: flex;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+#my-score {
+    top: 8px;
+    right: 10px;
+}
