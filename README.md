@@ -1,5 +1,8 @@
 # Javascript-Quizlet
 
+submit button not working
+save initials and highscore not working
+
 
 Javascript Quizlet!
 
