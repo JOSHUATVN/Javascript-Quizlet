@@ -10,6 +10,23 @@
     --hue-wrong: 0;
 
 }
+
+/* initials styles */
+#enter-initial {
+    top: 8px;
+    justify-content: center;
+    font-style: italic;
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block, flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 /* background styles */
 body {
     --hue: var(--hue-neutral);
@@ -67,6 +84,15 @@ body {
     font-weight: bold;
     padding:20px 40px;
 }
+
+.highscore{
+    float: right;
+    width: 83%;
+    margin-right: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
 /* start and next styles */
 .controls {
     display: flex;
@@ -88,6 +114,12 @@ body {
     top: 8px;
     left: 10px;
 }
+
+.done{
+    font-size: 30px;
+    font-style: Arial, Bold;
+}
+
 #my-score {
     top: 8px;
     right: 10px;

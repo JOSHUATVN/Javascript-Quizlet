@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./asset/css/styles.css" />
-    <script defer src="./asset/js/script.js"></script>
-    <title>Javascript Quiz!</title>
-  </head>
-  <body>
-    <div id= "my-score"></div>
-    <div id= "my-timer"></div>
-    <div class="container">
-      <div id="question-container" class="hide">
-        <div id="question">Question</div>
-        <div id="answer-buttons" class="button-grid">
-          <button class="button">Answer 1</button>
-          <button class="button">Answer 2</button>
-          <button class="button">Answer 3</button>
-          <button class="button">Answer 4</button>
-        </div>
-      </div>
-      <div class="controls">
-        <button id="start-button" class="start-button button">Start</button>
-        <button id="next-button" class="start-button button hide">Next</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./asset/css/styles.css" />
+  <script defer src="./asset/js/script.js"></script>
+  <title>Javascript Quiz!</title>
+</head>
+
+<body>
+  <div id="stored-scores">
+    <a href=""></a>
+  </div>
+  <div id="my-score"></div>
+  <div id="my-timer"></div>
+  <div id="all-done-text" class="done hide">
+    </h1> All Done!</h1>
+  </div>
+  <div id= "highscores">
+    <button class="start-button highscore"> View HighScores</button>
+    <div class="hide">
+    <h1>HighScores</h1>
+    <ul id="list-scores">
+
+    </ul>
+    </div>
+  
+  </div>
+  <div class="container">
+    <form id="enter-initials" class="hide">
+      <label for="name">Initials</label><br>
+      <input type="text"><br>
+      <button id="submit-info " class="button hide">Submit</button>
+    </form>
+    <div id="question-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="button-grid">
+        <button class="button">Answer 1</button>
+        <button class="button">Answer 2</button>
+        <button class="button">Answer 3</button>
+        <button class="button">Answer 4</button>
       </div>
     </div>
-  </body>
+    <div class="controls">
+      <button id="start-button" class="start-button button">Start</button>
+      <button id="next-button" class="start-button button hide">Next</button>
+      <button id="play-again" class="start-button button hide">Play Again</button>
+    </div>
+  </div>
+</body>
+
 </html>

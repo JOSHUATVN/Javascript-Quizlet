@@ -6,6 +6,12 @@ const myTimer = document.getElementById("my-timer")
 const questionBox = document.getElementById("question")
 const answerButtons = document.getElementById('answer-buttons')
 const playerHighScore = document.getElementById('my-score')
+const playerInitialsInputBox = document.getElementById('enter-initials')
+const resetGame = document.getElementById('play-again')
+const allDone = document.getElementById('all-done-text')
+const viewHs = document.getElementById('highscores')
+const listScores = document.getElementById('list-scores')
+const submitInitials = document.getElementById('submit-info')
 
 // variables for time, score, array
 let remainingTime = 60;
@@ -14,7 +20,7 @@ let seconds = getSeconds();
 let questionIndex = 0;
 let highScore = 0;
 let timerInterval;
-
+let initials = "";
 
 // 5 questions
 let question01 = {
@@ -86,14 +92,19 @@ function updateHighScore () {
 }
 
 // timer function
-function updateRemainingTime() {
+function countdown() {
     if (remainingTime < 0) return;
+    updateRemainingTime();
+    remainingTime--;
+    timerInterval = setTimeout(countdown, 1000);
+}
+
+function updateRemainingTime() {
     minutes = getMinutes();
     seconds = getSeconds();
     myTimer.innerHTML = `Minutes Left: ${minutes} Seconds Left: ${seconds}`;
-    remainingTime--;
-    timerInterval = setTimeout(updateRemainingTime, 1000);
 }
+
 // time stop function
 function stopTimer() {
     clearInterval(timerInterval);
@@ -105,9 +116,17 @@ startButton.addEventListener('click', function () {
     startButton.classList.add("hide");
     questionIndex = 0
     randomQuestion = myQuestions.sort(() => Math.random() - .5)
-    updateRemainingTime();
+    countdown();
     displayQuestion();
 });
+
+
+//end game button
+resetGame.addEventListener('click', function(){
+    resetGame.classList.add("hide");
+    resetPage()
+});
+
 
 // fuctions for diplaying the question
 function displayQuestion() {
@@ -122,9 +141,12 @@ function nextQuestion() {
         questionIndex++
         displayQuestion()
     } else {
+        viewHs.classList.remove("hide")
+        playerInitialsInputBox.classList.remove("hide");
         questionContainer.classList.add("hide");
         updateHighScore();
         stopTimer();
+        showResetButton();
     }
 }
 
@@ -158,4 +180,43 @@ function displayAnswers() {
     }
 
 
+}
+
+// highscore button and submiot button
+viewHs.addEventListener("click", viewHighscore());
+
+submitInitials.addEventListener('click', submitBtn)
+
+function submitBtn() {
+    
+    viewHighscore()
+}
+// view highscore function
+function viewHighscore() {
+    let newScore = document.createElement('li');
+    newScore
+}
+
+//saving initial and highscores
+function savedNameScore() {
+    let playerName = playerInitialsInputBox.value;
+    localStorage.setItem(playerName,highScore);
+}
+
+
+
+
+// end of game
+function  showResetButton() {
+    resetGame.classList.remove("hide");
+    nextButton.classList.add("hide");
+}
+
+function resetPage() {
+    playerInitials.classList.remove("hide");
+    startButton.classList.remove("hide");
+    highScore = 0;
+    updateHighScore();
+    remainingTime = 60;
+    updateRemainingTime();
 }
